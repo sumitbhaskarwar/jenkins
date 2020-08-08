@@ -5,9 +5,9 @@ node {
 	}
 	
 	stage('Build'){
-	  def mvnHome = tool 'M2_HOME'
-	  withEnv(["MVN_HOME=$mvnHome"]){
-	    sh '"$MVN_HOME/bin/mvn" clean install compile package'
+	  def mvnHome = tool 'Maven'
+	  withEnv(["MAVEN_HOME=$mvnHome"]){
+	    sh '"$MAVEN_HOME/bin/mvn" clean install compile package'
 	  }
 	}
 	
